@@ -57,4 +57,10 @@ public class MainActivity extends AppCompatActivity {
         ClientAsyncTask clientAsyncTask = new ClientAsyncTask("poll", serverMessageTextView);
         clientAsyncTask.execute(Constants.SERVER_HOST, String.valueOf(Constants.SERVER_PORT));
     }
+    public void handleReset(View view) {
+        Log.v(Constants.TAG, "Status clicked...");
+        serverMessageTextView = (TextView) findViewById(R.id.textView2);
+        ClientAsyncTask clientAsyncTask = new ClientAsyncTask("reset", serverMessageTextView);
+        clientAsyncTask.execute(Constants.SERVER_HOST, String.valueOf(Constants.SERVER_PORT));
+    }
 }
